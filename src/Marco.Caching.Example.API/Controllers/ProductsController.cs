@@ -23,7 +23,7 @@ namespace Marco.Caching.Example.API.Controllers
 
             if (!cache.TryGetValue<Product>(cacheKey, out var product))
             {
-                product = new Product { Id = id, Title = $"Product", Price = 2.5m }; // Fake Product
+                product = new Product { Id = id, Title = $"Product {id}", Price = 2.5m }; // Fake Product
                 await cache.SetAsync(cacheKey, product);
             }
 
